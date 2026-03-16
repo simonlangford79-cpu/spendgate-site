@@ -1,32 +1,32 @@
 export default function Page() {
   return (
     <main className="min-h-screen bg-white text-slate-900">
-      <div className="mx-auto max-w-7xl px-6 py-10 sm:px-8 lg:px-10">
+      <div className="mx-auto max-w-7xl px-6 py-6 sm:px-8 sm:py-10 lg:px-10">
 
         {/* HERO */}
 
-        <section className="mx-auto max-w-5xl pt-6 text-center">
+        <section className="mx-auto max-w-5xl pt-4 text-center">
 
-          <div className="flex justify-center">
+          {/* Responsive logo */}
+          <div className="flex justify-center mb-10">
             <img
               src="/spendgate-logo.png"
               alt="SpendGate logo"
-              className="h-56 w-auto sm:h-64 lg:h-72"
+              className="w-[220px] sm:w-[300px] md:w-[360px] lg:w-[440px] h-auto"
             />
           </div>
 
-          <h1 className="mx-auto mt-10 max-w-5xl text-4xl font-semibold leading-[0.95] tracking-[-0.05em] text-slate-950 sm:text-5xl lg:text-7xl">
+          <h1 className="mx-auto mt-6 max-w-5xl text-4xl font-semibold leading-[0.95] tracking-[-0.05em] text-slate-950 sm:text-5xl lg:text-7xl">
             Control operational spend
             <br />
             <span className="bg-[linear-gradient(135deg,#0c2d5b_0%,#18b39b_55%,#8bc53f_100%)] bg-clip-text text-transparent">
-              before it becomes spending chaos
+              before it becomes invoice chaos
             </span>
           </h1>
 
           <p className="mx-auto mt-7 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-            SpendGate is lightweight operational software, helping multi-site businesses bring structure, visibility,
-            and approval control to everyday operational purchasing before it
-            turns into downstream finance noise.
+            SpendGate is lightweight spend control software, helping multi-site businesses bring structure, visibility,
+            and approval control to everyday operational purchasing.
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -214,7 +214,8 @@ export default function Page() {
             </h3>
 
             <p className="mx-auto mt-4 max-w-xl text-slate-600">
-              We’re speaking with operators, finance leaders and early design partners.
+              We’re speaking with operators, finance leaders and early design partners
+              managing distributed estates.
             </p>
 
             <div className="mt-8">
