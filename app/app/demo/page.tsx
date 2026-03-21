@@ -447,7 +447,7 @@ export default function Demo() {
                 </div>
                 {approved.length === 0 && <div style={{ background:"#fff", border:"1px solid #e2e8f0", borderRadius:10, padding:"24px", textAlign:"center", color:"#94a3b8", fontSize:13 }}>Queue clear — all approved requests have been placed.</div>}
                 {approved.map(r=>(
-                  <div key={r.id} onClick={()=>setSelId(r.id)} sstyle={{ border:`1px solid ${selId===r.id?"#bfdbfe":"#e2e8f0"}`, borderLeft:`3px solid ${selId===r.id?"#0c2d5b":"transparent"}`, borderRadius:10, padding:"14px 16px", marginBottom:8, cursor:"pointer", background: selId===r.id?"#f0f9ff":"#fff" }}
+                  <div key={r.id} onClick={()=>setSelId(r.id)} style={{ border:`1px solid ${selId===r.id?"#bfdbfe":"#e2e8f0"}`, borderLeft:`3px solid ${selId===r.id?"#0c2d5b":"transparent"}`, borderRadius:10, padding:"14px 16px", marginBottom:8, cursor:"pointer", background: selId===r.id?"#f0f9ff":"#fff" }}>
                     <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start" }}>
                       <div>
                         <div style={{ fontSize:12, fontWeight:700 }}>{r.id} · {r.venue}</div>
