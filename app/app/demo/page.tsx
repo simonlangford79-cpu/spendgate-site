@@ -374,7 +374,7 @@ export default function Demo() {
                           <div style={{ background:"#fff", border:"1px solid #e2e8f0", borderRadius:10, padding:"14px 16px" }}>
                             <div style={{ fontSize:10, fontWeight:700, color:"#94a3b8", textTransform:"uppercase", letterSpacing:".07em", marginBottom:8 }}>Budget impact</div>
                             {[{ lbl:"Venue — "+sel.venue, total:vb.t, used:vb.u, after:vA },{ lbl:"Category — "+sel.cat, total:cb.t, used:cb.u, after:cA }].map(b=>{
-                              const pct = Math.round(((b.used+sel.amt)/b.t)*100);
+                              const pct = Math.round(((b.used+sel.amt)/b.total)*100);
                               const over = b.after < 0;
                               const c = over?"#ef4444":pct>82?"#f59e0b":"#18b39b";
                               return (
