@@ -1,18 +1,9 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState } from "react";
 
 export default function Page() {
-  const [email, setEmail] = useState<string>("");
-  const [company, setCompany] = useState<string>("");
-  const [submitted, setSubmitted] = useState<boolean>(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    if (!email) return;
-    setSubmitted(true);
-  }
 
   const faqs = [
     {
@@ -42,27 +33,27 @@ export default function Page() {
   ];
 
   const mockupRows = [
-    { name: "HVAC emergency repair",            meta: "Site A · J. Walsh · 2h ago · Maintenance",    amount: "£2,400", badge: "Awaiting approval", cls: "badge-amber" },
-    { name: "Kitchen equipment replacement",    meta: "Site B · D. Osei · 5h ago · Kitchen",          amount: "£1,850", badge: "Approved",          cls: "badge-green" },
-    { name: "Cleaning supplies — monthly",      meta: "Site C · L. Chen · Yesterday · Cleaning",      amount: "£340",   badge: "Approved",          cls: "badge-green" },
-    { name: "Emergency plumbing — staff block", meta: "Site D · M. Patel · Yesterday · Maintenance",  amount: "£680",   badge: "Pending review",    cls: "badge-sky"   },
-    { name: "Treadmill servicing",              meta: "Site E · S. Brooke · 2 days ago · Equipment",  amount: "£910",   badge: "Rejected",          cls: "badge-red"   },
+    { name: "HVAC emergency repair",            meta: "Site A · J. Walsh · 2h ago · Maintenance",   amount: "£2,400", badge: "Awaiting approval", cls: "badge-amber" },
+    { name: "Kitchen equipment replacement",    meta: "Site B · D. Osei · 5h ago · Kitchen",         amount: "£1,850", badge: "Approved",          cls: "badge-green" },
+    { name: "Cleaning supplies — monthly",      meta: "Site C · L. Chen · Yesterday · Cleaning",     amount: "£340",   badge: "Approved",          cls: "badge-green" },
+    { name: "Emergency plumbing — staff block", meta: "Site D · M. Patel · Yesterday · Maintenance", amount: "£680",   badge: "Pending review",    cls: "badge-sky"   },
+    { name: "Treadmill servicing",              meta: "Site E · S. Brooke · 2 days ago · Equipment", amount: "£910",   badge: "Rejected",          cls: "badge-red"   },
   ];
 
   const verticals = [
-    { icon: "🍽️", label: "Restaurant chains",      desc: "Consumable and equipment spend controlled across every site" },
-    { icon: "🏨", label: "Hospitality groups",     desc: "Maintenance and ops costs approved before they hit your P&L" },
-    { icon: "⛳", label: "Golf and leisure",        desc: "Course, clubhouse, and facility spend, routed before ordered" },
-    { icon: "💪", label: "Gym and fitness",         desc: "Equipment servicing and supply requests, tracked centrally" },
-    { icon: "🏢", label: "Facilities businesses",  desc: "Structured purchasing across complex property portfolios" },
-    { icon: "🛍️", label: "Retail and more",         desc: "Any business where site managers buy things every day" },
+    { icon: "🍽️", label: "Restaurant chains",     desc: "Consumable and equipment spend controlled across every site" },
+    { icon: "🏨", label: "Hospitality groups",    desc: "Maintenance and ops costs approved before they hit your P&L" },
+    { icon: "⛳", label: "Golf and leisure",       desc: "Course, clubhouse, and facility spend, routed before ordered" },
+    { icon: "💪", label: "Gym and fitness",        desc: "Equipment servicing and supply requests, tracked centrally" },
+    { icon: "🏢", label: "Facilities businesses", desc: "Structured purchasing across complex property portfolios" },
+    { icon: "🛍️", label: "Retail and more",        desc: "Any business where site managers buy things every day" },
   ];
 
   const diffCards = [
-    { vs: "vs. ApprovalMax", title: "Before the invoice, not after it", body: "ApprovalMax approves bills and invoices that already exist in your accounting system. By then, the purchase decision was already made. SpendGate sits earlier — it captures the request at the moment someone decides to buy something, before any money moves.", tag: "Pre-purchase control" },
-    { vs: "vs. ProcurementExpress and similar", title: "Built for operational purchasing, not formal POs", body: "Most purchase order tools are designed around formal PO management for procurement teams. SpendGate is built for the informal, ad-hoc operational spend that happens every day across your sites — managed by site managers, not buyers.", tag: "Operational, not strategic" },
-    { vs: "vs. Email and WhatsApp", title: "Structure where there was none", body: "Chat tools have no budget check, no audit trail, no supplier enforcement. Finance only discovers what was spent when the invoice lands. SpendGate captures the request before any money moves and routes it to the right approver automatically.", tag: "Replaces informal approval" },
-    { vs: "What makes it work at scale", title: "The Buyer Queue: a step most tools skip", body: "Most approval tools treat approval as the end of the workflow. SpendGate adds a Buyer Queue — a dedicated execution step where the person placing the order works from a clean list of what has been signed off. Finance sees the full journey, not just the decision.", tag: "Request to order, not just approval" },
+    { vs: "vs. ApprovalMax",                      title: "Before the invoice, not after it",               body: "ApprovalMax approves bills and invoices that already exist in your accounting system. By then, the purchase decision was already made. SpendGate sits earlier — it captures the request at the moment someone decides to buy something, before any money moves.",                                                                                                              tag: "Pre-purchase control" },
+    { vs: "vs. ProcurementExpress and similar",   title: "Built for operational purchasing, not formal POs", body: "Most purchase order tools are designed around formal PO management for procurement teams. SpendGate is built for the informal, ad-hoc operational spend that happens every day across your sites — managed by site managers, not buyers.",                                                                                                                           tag: "Operational, not strategic" },
+    { vs: "vs. Email and WhatsApp",               title: "Structure where there was none",                  body: "Chat tools have no budget check, no audit trail, no supplier enforcement. Finance only discovers what was spent when the invoice lands. SpendGate captures the request before any money moves and routes it to the right approver automatically.",                                                                                                               tag: "Replaces informal approval" },
+    { vs: "What makes it work at scale",          title: "The Buyer Queue: a step most tools skip",         body: "Most approval tools treat approval as the end of the workflow. SpendGate adds a Buyer Queue — a dedicated execution step where the person placing the order works from a clean list of what has been signed off. Finance sees the full journey, not just the decision.",                                                                                          tag: "Request to order, not just approval" },
   ];
 
   const steps = [
@@ -80,7 +71,7 @@ export default function Page() {
       <nav>
         <div className="inner">
           <img src="/spendgate-logo.png" alt="SpendGate" />
-          <a href="#early-access" className="cta">Request early access</a>
+          <a href="mailto:hello@spendgate.io?subject=SpendGate early access" className="cta">Get in touch</a>
         </div>
       </nav>
 
@@ -103,18 +94,12 @@ export default function Page() {
             Structured purchase requests, approval routing, and a buyer queue —
             so finance sees every penny before the invoice arrives.
           </p>
-          {!submitted ? (
-            <form className="capture-form a5" onSubmit={handleSubmit} id="early-access">
-              <div className="row">
-                <input type="email" placeholder="Work email" value={email} onChange={e => setEmail(e.target.value)} required />
-                <input type="text" placeholder="Company name" value={company} onChange={e => setCompany(e.target.value)} />
-              </div>
-              <button type="submit">Request early access</button>
-              <p className="form-note">No commitment. We will reach out within 48 hours.</p>
-            </form>
-          ) : (
-            <div className="success-box a5">You are on the list — we will be in touch within 48 hours.</div>
-          )}
+          <div className="a5">
+            <a href="mailto:hello@spendgate.io?subject=SpendGate early access" className="cta-button">
+              Get in touch →
+            </a>
+            <p className="cta-note">We are speaking with operators and finance leaders right now.</p>
+          </div>
         </div>
       </section>
 
@@ -267,20 +252,11 @@ export default function Page() {
       {/* FOOTER CTA */}
       <section className="footer-cta">
         <div className="wrap">
-          <h2>Join the early access list</h2>
-          <p>We are speaking with operators, finance leaders, and design partners right now.</p>
-          {!submitted ? (
-            <form className="capture-form" onSubmit={handleSubmit}>
-              <div className="row">
-                <input type="email" placeholder="Work email" value={email} onChange={e => setEmail(e.target.value)} required />
-                <input type="text" placeholder="Company name" value={company} onChange={e => setCompany(e.target.value)} />
-              </div>
-              <button type="submit">Get early access</button>
-              <p className="form-note">No commitment · We will reach out within 48 hours</p>
-            </form>
-          ) : (
-            <div className="success-box">You are on the list — we will be in touch within 48 hours.</div>
-          )}
+          <h2>Interested in an early conversation?</h2>
+          <p>We are speaking with operators and finance leaders right now. No pitch, no demo pressure — just an honest conversation about the problem.</p>
+          <a href="mailto:hello@spendgate.io?subject=SpendGate early access" className="cta-button">
+            Email us →
+          </a>
           <div className="urgency-row">
             <div className="urgency-pill"><span className="dot-teal"></span>Early conversations open now</div>
             <div className="urgency-pill">Targeting Q3 2026 beta</div>
