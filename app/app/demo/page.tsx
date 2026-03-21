@@ -410,7 +410,7 @@ export default function Demo() {
                               <button onClick={()=>doApprove(sel.id)} style={{ flex:1, background:"#18b39b", color:"#fff", border:"none", borderRadius:8, padding:9, fontSize:12, fontWeight:600, cursor:"pointer", fontFamily:"inherit" }}>Approve →</button>
                             </div>
                             {pending.find(r=>r.id!==sel.id) && (
-                              <button onClick={()=>setSelId(pending.find(r=>r.id!==sel.id)!.id)} style={{ width:"100%", background:"transparent", border:"none", fontSize:11, color:"#94a3b8", cursor:"pointer", marginTop:6, fontFamily:"inherit" }}>Skip to next ↓</button>
+                              <button onClick={()=>setSelId(pending.find(r => r.id !== sel.id)?.id ?? "" style={{ width:"100%", background:"transparent", border:"none", fontSize:11, color:"#94a3b8", cursor:"pointer", marginTop:6, fontFamily:"inherit" }}>Skip to next ↓</button>
                             )}
                           </div>
                         </div>
